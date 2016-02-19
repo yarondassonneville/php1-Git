@@ -85,6 +85,7 @@
             font-weight:bold;
             color:#585858;
             margin-bottom:10px;
+            background-color:#e63333;
         }
         
         article {
