@@ -38,6 +38,18 @@
         .red {
             background-color:#e63333;
         }
+
+        h2 {
+            float:left;
+        }
+
+        p.where {
+            float:right;
+        }
+
+        .clearfix {
+            clear:both;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +68,9 @@
                 break;
         }
         ?>">
-            <h><?php echo $toDoItem["beschrijving"] ?></h>
+            <h2><?php echo $toDoItem["beschrijving"] ?></h2>
+            <p class="where"><?php echo $toDoItem["categorie"] ?></p>
+            <div class="clearfix"></div>
         </div>
         <?php endforeach; ?>
     </div>
