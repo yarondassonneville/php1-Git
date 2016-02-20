@@ -1,9 +1,11 @@
 <?php
+    $filter = $_GET;
+
     $checkins = [
-                ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Theresa W.","checkin" => "East River Park", "place" => "Brooklyn, NY", "photo" => "http://photos.cntraveler.com/2014/09/29/5429c32b425f183f61bf7316_new-york-city-skyline.jpg"],
-                ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Nina M.","checkin" => "Rubirosa", "place" => "New York, NY", "photo" => ""],
-        ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Sean B.","checkin" => "Blue Bottle Coffee", "place" => "South of Market, San Fransisco", "photo" => ""],
-        ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Mike A.","checkin" => "Land's Workout", "place" => "San Fransisco", "photo" => ""]
+                ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Theresa W.","checkin" => "East River Park", "place" => "Brooklyn, NY", "old" => false ,"photo" => "http://photos.cntraveler.com/2014/09/29/5429c32b425f183f61bf7316_new-york-city-skyline.jpg"],
+                ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Nina M.","checkin" => "Rubirosa", "place" => "New York, NY", "old" => true],
+        ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Sean B.","checkin" => "Blue Bottle Coffee", "place" => "South of Market, San Fransisco", "old" => true],
+        ["user_picture" => "https://s3.amazonaws.com/uifaces/faces/twitter/robertovivancos/128.jpg","name" => "Mike A.","checkin" => "Land's Workout", "place" => "San Fransisco", "old" => true]
              ];
 
 ?><!DOCTYPE html>
@@ -64,7 +66,8 @@
         }
         
         .clearfix {
-            clear:both;   
+            clear:both;
+            display:block;
         }
         
         footer {
@@ -85,12 +88,27 @@
             font-weight:bold;
             color:#585858;
             margin-bottom:10px;
-            background-color:#e63333;
         }
         
         article {
             max-width:500px;
             margin:10px auto;
+        }
+
+        nav {
+            color:white;
+        }
+
+        nav a:link,
+        nav a:visited,
+        nav a:hover,
+        nav a:active {
+            color:white;
+            text-decoration:none;
+        }
+
+        nav a:hover {
+            color:#f3f3f3;
         }
     </style>
 
@@ -99,9 +117,15 @@
     <?php
         include_once("header.inc.php");
     ?>
-  
+  <div class="clearfix"> </div>
    <section class="timeline">
        <?php foreach( $checkins as $checkin): ?>
+           <?php if(isset($filter["old"])) {
+               if($checkin["old"] == $filter["old"]) continue;
+           }
+           else
+           {
+           } ?>
        <article>
           <img src="<?php echo $checkin["user_picture"] ?>" alt="Foto" width="60px" class="profile_image">
           <div class="right">
@@ -109,7 +133,7 @@
            <p class="checkin"><?php echo $checkin["checkin"] ?></p>
            <p class="place"><?php echo $checkin["place"] ?></p>
            <?php
-                if($checkin["photo"] != ""){
+                if(isset($checkin["photo"])){
                     echo '<img src="' . $checkin["photo"] . '" alt="foto" class="checkfoto">';
                 }
             ?>
