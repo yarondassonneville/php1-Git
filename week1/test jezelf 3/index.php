@@ -16,27 +16,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <style>
+        body {
+            background-color:#2C3E50;
+        }
+
         .item {
             /*width:100%;*/
-            font-size:20px;
-            border-bottom-color: rgba(59, 59, 59, 0.68);
+            font-size:30px;
+            font-weight:bold;
+            /*border-bottom-color: rgba(59, 59, 59, 0.68);
             border-bottom-width: 1px;
-            border-bottom-style:solid;
-            padding:15px 5px;
+            border-bottom-style:solid;*/
+            padding:30px 15px;
             font-family:"Lato";
             color:white;
         }
 
         .green {
-            background-color:#41bc41;
+            background-color:#3DE294;
         }
 
         .orange {
-            background-color:#fcb021;
+            background-color:#FDD51C;
         }
 
         .red {
-            background-color:#e63333;
+            background-color:#F9684D;
         }
 
         h2 {
@@ -50,6 +55,15 @@
         .clearfix {
             clear:both;
         }
+
+        div.logo img {
+            width:100px;
+            display:block;
+            margin:20px auto;
+            -webkit-filter:invert(1);
+        }
+
+
     </style>
 </head>
 <body>
@@ -73,6 +87,10 @@
             <div class="clearfix"></div>
         </div>
         <?php endforeach; ?>
+    </div>
+
+    <div class="logo">
+        <img src="logoYaron.svg" alt="logo">
     </div>
 </body>
 </html>
