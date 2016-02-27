@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>
-		
+
 	</title>
 	<link rel="stylesheet" href="css/ello.css">
 </head>
@@ -14,13 +14,13 @@
 	<div class="users_container">
 	<ul class="users">
 		
-		<!--
+		<?php foreach($users as $key => $user): ?>
 		<li>
-			<a href="profile.php?id=1">
-			<img src="" alt="">
+			<a href="profile.php?id=<?php echo $key ?>">
+			<img src="<?php echo $user['picture']?>" alt="">
 			</a>
 		</li>
-		-->
+		<?php endforeach; ?>
 		
 	</ul>
 	<br class="clearfix">

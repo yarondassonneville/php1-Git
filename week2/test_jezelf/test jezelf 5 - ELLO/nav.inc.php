@@ -1,24 +1,31 @@
 <?php
-	
+	session_start();
+
 	function canLogin($p_username, $p_password)
 	{
-		// this function only checks if a user may or may not log in	
+		if(isset($p_username) && isset($p_password)){
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	function isLoggedIn()
 	{
-		// check if a user has previously logged in
+		if($_SESSION['loggedin'] == true) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	function doLogin($p_user)
 	{
-		// this function sets the cookie required for subsequent logins
+		$_SESSION['loggedin'] = true;
+		$_SESSION["user"] = $p_user;
 	}
-
-
-		
-	
-	
 
 ?>
 
