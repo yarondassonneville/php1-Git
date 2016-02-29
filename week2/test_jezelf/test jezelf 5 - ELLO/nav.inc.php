@@ -13,11 +13,12 @@
 
 	function isLoggedIn()
 	{
-		if($_SESSION['loggedin'] == true) {
-			return true;
-		}
-		else {
-			return false;
+		if(isset($_SESSION['loggedin'])) {
+			if ($_SESSION['loggedin'] == true) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 
@@ -27,16 +28,23 @@
 		$_SESSION["user"] = $p_user;
 	}
 
+	if(isset($_POST["username"]) && isset($_POST["password"])) {
+		if (canLogin($_POST["username"], $_POST["password"])) {
+			$_SESSION['loggedin'] = true;
+		}
+	}
 ?>
 
 <nav>
 	
-	<!--<p class="welcome">Welcome back! <a href="logout.php">Log out?</a></p>-->
-			
-	<form action="" method="post">
+	<?php if(isLoggedIn()): ?>
+	<p class="welcome">Welcome back! <a href="logout.php">Log out?</a></p>
+	<?php else: ?>
+	<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 		<input class="input" type="text" name="username" placeholder="Your username">
 		<input class="input" type="password" name="password" placeholder="Your password">
 		<button class="button" type="submit">Log in</button>
 	</form>
+	<?php endif; ?>
 	
 </nav>
