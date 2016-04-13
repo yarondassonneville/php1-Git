@@ -45,7 +45,40 @@
                     $("#min").text("Min " + Math.round(tempMin) + " °C");
                     App.getPlaceName();
                     
-                    switch (data.currently.icon)
+                    console.log(data.currently.icon);
+                    
+                    switch (data.currently.icon) {
+                        case "cloudy":
+                            $(".icon").attr("src", "images/14.svg")
+                            break;
+                        case "clear-day":
+                            $(".icon").attr("src", "images/2.svg")
+                            break;
+                        case "clear-night":
+                            $(".icon").attr("src", "images/3.svg")
+                            break;
+                        case "rain":
+                            $(".icon").attr("src", "images/18.svg")
+                            break;
+                        case "snow":
+                            $(".icon").attr("src", "images/23.svg")
+                            break;
+                        case "sleet":
+                            $(".icon").attr("src", "images/3.svg")
+                            break;
+                        case "wind":
+                            $(".icon").attr("src", "images/6.svg")
+                            break;
+                        case "fog":
+                            $(".icon").attr("src", "images/13.svg")
+                            break;
+                        case "partly-cloudy-day":
+                            $(".icon").attr("src", "images/8.svg")
+                            break;
+                        case "partly-cloudy-night":
+                            $(".icon").attr("src", "images/9.svg")
+                            break;
+                    }
                 }
             });
         },
