@@ -45,38 +45,46 @@
                     $("#min").text("Min " + Math.round(tempMin) + " °C");
                     App.getPlaceName();
                     
-                    console.log(data.currently.icon);
-                    
                     switch (data.currently.icon) {
                         case "cloudy":
-                            $(".icon").attr("src", "images/14.svg")
+                            $(".icon").attr("src", "images/14.svg");
+                            $(".imgClothes").attr("src", "images/otherone.png");
                             break;
                         case "clear-day":
-                            $(".icon").attr("src", "images/2.svg")
+                            $(".icon").attr("src", "images/2.svg");
+                            $(".imgClothes").attr("src", "images/splash-drinks-bottle1.png");
                             break;
                         case "clear-night":
-                            $(".icon").attr("src", "images/3.svg")
+                            $(".icon").attr("src", "images/3.svg");
+                            $(".imgClothes").attr("src", "images/other.png");
                             break;
                         case "rain":
-                            $(".icon").attr("src", "images/18.svg")
+                            $(".icon").attr("src", "images/18.svg");
+                            $(".imgClothes").attr("src", "images/rain.png");
                             break;
                         case "snow":
-                            $(".icon").attr("src", "images/23.svg")
+                            $(".icon").attr("src", "images/23.svg");
+                            $(".imgClothes").attr("src", "images/rain.png");
                             break;
                         case "sleet":
-                            $(".icon").attr("src", "images/3.svg")
+                            $(".icon").attr("src", "images/3.svg");
+                            $(".imgClothes").attr("src", "images/other.png");
                             break;
                         case "wind":
-                            $(".icon").attr("src", "images/6.svg")
+                            $(".icon").attr("src", "images/6.svg");
+                             $(".imgClothes").attr("src", "images/otherone.png");
                             break;
                         case "fog":
-                            $(".icon").attr("src", "images/13.svg")
+                            $(".icon").attr("src", "images/13.svg");
+                             $(".imgClothes").attr("src", "images/otherone.png");
                             break;
                         case "partly-cloudy-day":
-                            $(".icon").attr("src", "images/8.svg")
+                            $(".icon").attr("src", "images/8.svg");
+                            $(".imgClothes").attr("src", "images/other.png");
                             break;
                         case "partly-cloudy-night":
-                            $(".icon").attr("src", "images/9.svg")
+                            $(".icon").attr("src", "images/9.svg");
+                             $(".imgClothes").attr("src", "images/otherone.png");
                             break;
                     }
                 }
