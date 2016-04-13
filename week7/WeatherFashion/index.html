@@ -42,30 +42,41 @@
         
         .clothes {
             float:left;
-            width:30%;
+            width:40%;
         }
         
         .weatherInfo {
             float:right;
-            width:65%;
+            width:55%;
             text-align:center;
-            color:white;
+            color:#393939;
+            background: rgba(255,255,255,0.60);
+            margin:20px 10px 0px 0px;
+            padding:20px 5px 20px 5px;
         }
         
         #temp {
             font-size:3em;
-        }
-        
-        #min {
-            float:left;
-        }
-        
-        #max {
-            float:left;
+            margin-bottom:20px;
         }
         
         .hamburger {
-            padding:10px;
+            padding:12px 10px 8px 10px;
+        }
+        
+        .minMax {
+            margin-bottom:20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #min {
+            margin-right: 5px;
+        }
+        
+        #max {
+            margin-left: 5px;
         }
         
         .hamburger span {
@@ -96,11 +107,12 @@
                 <h1 id="temp"></h1>
                 <div class="minMax">
                     <p id="min"></p>
+                    <p>|</p>
                     <p id="max"></p>
                 </div>
                 <div class="clearfix"></div>
                 <div class="weatherType">
-                    <p id="summary">Zonnig</p>
+                    <p id="summary"></p>
                     <img class="icon" src="">
                 </div>
             </div>

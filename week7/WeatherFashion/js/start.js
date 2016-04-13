@@ -44,6 +44,8 @@
                     var tempMin = (data.daily.data[0].temperatureMin - 32)*5/9;
                     $("#min").text("Min " + Math.round(tempMin) + " °C");
                     App.getPlaceName();
+                    
+                    switch (data.currently.icon)
                 }
             });
         },
