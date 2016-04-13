@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WeatherFashion</title>
+	<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+	<style>
+        body{
+            /*background-color: white;*/
+            color: black;
+            font-family: Raleway;
+            background-image:url(1920x1200-data_images-out-17-917797-weather-wallpaper.jpg);
+            background-position: center;
+            background-size:cover;
+            width:100%;
+            height:100vh;
+        }
+        
+        .weather{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        header {
+            background-color:#393939;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .clearfix {
+            clear:both;
+        }
+        
+        .place {
+            margin-left:-50px;
+            padding:12px 0px;
+            font-size:1.4em;
+            color:white;
+        }
+        
+        .clothes {
+            float:left;
+            width:30%;
+        }
+        
+        .weatherInfo {
+            float:right;
+            width:65%;
+            text-align:center;
+            color:white;
+        }
+        
+        #temp {
+            font-size:3em;
+        }
+        
+        #min {
+            float:left;
+        }
+        
+        #max {
+            float:left;
+        }
+        
+        .hamburger {
+            padding:10px;
+        }
+        
+        .hamburger span {
+            width:30px;
+            height:4px;
+            background-color:white;
+            display: block;
+            margin:0px 0px 5px 0px;
+        }
+    </style>
+</head>
+<body>
+	<header>
+	    <div class="hamburger">
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	    </div>
+	    <div class="place"></div>
+	    <div class="otherPlace"></div>
+	</header>
+	<section>
+        <div class="niceInfo">
+            <div class="clothes">
+                
+            </div>
+            <div class="weatherInfo">
+                <h1 id="temp"></h1>
+                <div class="minMax">
+                    <p id="min"></p>
+                    <p id="max"></p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="weatherType">
+                    <p id="summary">Zonnig</p>
+                    <img class="icon" src="">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    
+	<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+	<script src="js/skycons.js"></script>
+	<script src="js/start.js"></script>
+
+</body>
+</html>
