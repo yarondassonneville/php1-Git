@@ -16,8 +16,7 @@
 	  font-style: normal;
 	}
         
-        body{
-            /*background-color: white;*/
+        body {
             color: black;
             font-family: Raleway;
             background-image:url(1920x1200-data_images-out-17-917797-weather-wallpaper.jpg);
@@ -25,6 +24,10 @@
             background-size:cover;
             width:100%;
             height:100vh;
+        }
+        
+        .hamburger {
+            cursor: pointer;
         }
         
         .weather{
@@ -99,9 +102,12 @@
         }
         
         .icon {
-            
+            margin-top:10px;
         }
     
+        .tomorrow {
+            margin-top:10px;
+        }
     </style>
 </head>
 <body>
@@ -130,6 +136,11 @@
                 <div class="weatherType">
                     <p id="summary"></p>
                     <img class="icon" style="width:50px;">
+                </div>
+                <div class="tomorrow">
+                   <p>Tomorrow</p>
+                    <div class="tomorrowTemp"></div>
+                    <div class="tomorrowSummary"></div>
                 </div>
             </div>
             <div class="clearfix"></div>
